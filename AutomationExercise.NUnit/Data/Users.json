@@ -1,0 +1,25 @@
+[
+    {
+        "name": "John Doe",
+        "email": "john@mail.com",
+        "gender": "M",
+        "password": "dummy",
+        "birthDate": {
+            "day": 25,
+            "month": "December",
+            "year": 1984
+        },
+        "newsletterSubcription": true,
+        "specialOffersSubscription": true,
+        "addressInformation": {
+            "firstName": "John",
+            "lastName": "Doe",
+            "address": "Test Street, Number 7 Apartment 101",
+            "country": "United States",
+            "state": "Nevada",
+            "city": "Las Vegas",
+            "zipcode": "123456789",
+            "mobileNumber": "987654321"
+        }
+    }
+]
