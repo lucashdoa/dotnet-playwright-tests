@@ -1,25 +1,23 @@
 [
     {
         "name": "John Doe",
-        "email": "john@mail.com",
-        "gender": "M",
+        "email": "johnsuperinexistentemail@mail.com",
+        "isMale": true,
         "password": "dummy",
-        "birthDate": {
-            "day": 25,
-            "month": "December",
-            "year": 1984
-        },
-        "newsletterSubcription": true,
-        "specialOffersSubscription": true,
-        "addressInformation": {
+        "birthDay": "25",
+        "birthMonth": "10",
+        "birthYear": "1984",
+        "isSubscribedNewsletter": true,
+        "isSubscribedSpecialOffers": true,
+        "address": {
             "firstName": "John",
             "lastName": "Doe",
-            "address": "Test Street, Number 7 Apartment 101",
+            "fullAddress": "Test Street, Number 7 Apartment 101",
             "country": "United States",
             "state": "Nevada",
             "city": "Las Vegas",
             "zipcode": "123456789",
-            "mobileNumber": "987654321"
+            "phone": "987654321"
         }
     }
 ]
