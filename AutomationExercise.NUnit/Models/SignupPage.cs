@@ -64,18 +64,9 @@ public class SignupPage
         await _signupButton.ClickAsync();
     }
 
-    public async Task EnterAccountInformation(
-        bool isMale,
-        string password,
-        string birthDay,
-        string birthMonth,
-        string birthYear,
-        bool isSubscribedNewsletter,
-        bool isSubscribedSpecialOffers,
-        Address address
-    )
+    public async Task EnterAccountInformation(UserData user)
     {
-        if (isMale)
+        if (user.isMale)
         {
             await _genderMaleRadio.CheckAsync();
         }
@@ -84,30 +75,30 @@ public class SignupPage
             await _genderFemaleRadio.CheckAsync();
         }
 
-        await _passwordInput.FillAsync(password);
+        await _passwordInput.FillAsync(user.password);
 
-        await _birthDaySelect.SelectOptionAsync(birthDay);
-        await _birthMonthSelect.SelectOptionAsync(birthMonth);
-        await _birthYearSelect.SelectOptionAsync(birthYear);
+        await _birthDaySelect.SelectOptionAsync(user.birthDay);
+        await _birthMonthSelect.SelectOptionAsync(user.birthMonth);
+        await _birthYearSelect.SelectOptionAsync(user.birthYear);
 
-        if (isSubscribedNewsletter)
+        if (user.isSubscribedNewsletter)
         {
             await _newsletterSelect.CheckAsync();
         }
 
-        if (isSubscribedSpecialOffers)
+        if (user.isSubscribedSpecialOffers)
         {
             await _offersSelect.CheckAsync();
         }
 
-        await _firstNameInput.FillAsync(address.firstName);
-        await _lastNameInput.FillAsync(address.lastName);
-        await _addressInput.FillAsync(address.fullAddress);
-        await _countrySelect.SelectOptionAsync(address.country);
-        await _stateInput.FillAsync(address.state);
-        await _cityInput.FillAsync(address.city);
-        await _zipcodeInput.FillAsync(address.zipcode);
-        await _mobileNumberInput.FillAsync(address.phone);
+        await _firstNameInput.FillAsync(user.address.firstName);
+        await _lastNameInput.FillAsync(user.address.lastName);
+        await _addressInput.FillAsync(user.address.fullAddress);
+        await _countrySelect.SelectOptionAsync(user.address.country);
+        await _stateInput.FillAsync(user.address.state);
+        await _cityInput.FillAsync(user.address.city);
+        await _zipcodeInput.FillAsync(user.address.zipcode);
+        await _mobileNumberInput.FillAsync(user.address.phone);
 
         await _createAccountButton.ClickAsync();
     }
