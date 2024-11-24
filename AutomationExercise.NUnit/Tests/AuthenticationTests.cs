@@ -22,31 +22,11 @@ public class Tests : PageTest
     }
 
     [Test, TestCaseSource(typeof(UserDataSource))]
-    public async Task RegisterUser(
-        string name,
-        string email,
-        bool isMale,
-        string password,
-        string birthDay,
-        string birthMonth,
-        string birthYear,
-        bool isSubscribedNewsletter,
-        bool isSubscribedSpecialOffers,
-        Address address
-    )
+    public async Task RegisterUser(UserData user)
     {
         await homePage.GoToAsync();
-        await signupPage.SignupUserWithEmail(name, email);
-        await signupPage.EnterAccountInformation(
-            isMale,
-            password,
-            birthDay,
-            birthMonth,
-            birthYear,
-            isSubscribedNewsletter,
-            isSubscribedSpecialOffers,
-            address
-        );
+        await signupPage.SignupUserWithEmail(user.name, user.email);
+        await signupPage.EnterAccountInformation(user);
 
         await Expect(accountCreatedPage.accountCreatedMessage).ToHaveTextAsync("Account Created!");
 

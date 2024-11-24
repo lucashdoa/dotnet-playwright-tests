@@ -15,22 +15,18 @@ public class UserDataSource : IEnumerable
         {
             yield return new object[]
             {
-                user.name,
-                user.email,
-                user.isMale,
-                user.password,
-                user.birthDay,
-                user.birthMonth,
-                user.birthYear,
-                user.isSubscribedNewsletter,
-                user.isSubscribedSpecialOffers,
-                user.address
+                user.userData
             };
         }
     }
 }
 
 public class User
+{
+    public UserData userData;
+}
+
+public class UserData
 {
     public string name { get; set; }
     public string email { get; set; }

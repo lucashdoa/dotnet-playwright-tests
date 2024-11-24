@@ -1,23 +1,48 @@
 [
     {
-        "name": "John Doe",
-        "email": "johnsuperinexistentemail@mail.com",
-        "isMale": true,
-        "password": "dummy",
-        "birthDay": "25",
-        "birthMonth": "10",
-        "birthYear": "1984",
-        "isSubscribedNewsletter": true,
-        "isSubscribedSpecialOffers": true,
-        "address": {
-            "firstName": "John",
-            "lastName": "Doe",
-            "fullAddress": "Test Street, Number 7 Apartment 101",
-            "country": "United States",
-            "state": "Nevada",
-            "city": "Las Vegas",
-            "zipcode": "123456789",
-            "phone": "987654321"
+        "userData": {
+            "name": "John Doe",
+            "email": "johnsuperinexistentemail@mail.com",
+            "isMale": true,
+            "password": "dummy",
+            "birthDay": "25",
+            "birthMonth": "10",
+            "birthYear": "1984",
+            "isSubscribedNewsletter": true,
+            "isSubscribedSpecialOffers": true,
+            "address": {
+                "firstName": "John",
+                "lastName": "Doe",
+                "fullAddress": "Test Street, Number 7 Apartment 101",
+                "country": "United States",
+                "state": "Nevada",
+                "city": "Las Vegas",
+                "zipcode": "123456789",
+                "phone": "987654321"
+            }
+        }
+    },
+    {
+        "userData": {
+            "name": "Jane Doe",
+            "email": "janesuperinexistentemail@mail.com",
+            "isMale": true,
+            "password": "dummy",
+            "birthDay": "15",
+            "birthMonth": "11",
+            "birthYear": "2005",
+            "isSubscribedNewsletter": false,
+            "isSubscribedSpecialOffers": false,
+            "address": {
+                "firstName": "Jane",
+                "lastName": "Doe",
+                "fullAddress": "Test Street, Number 7 Apartment 101",
+                "country": "United States",
+                "state": "Nevada",
+                "city": "Las Vegas",
+                "zipcode": "123456789",
+                "phone": "987654321"
+            }
         }
     }
 ]
