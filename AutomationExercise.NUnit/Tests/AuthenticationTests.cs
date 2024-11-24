@@ -1,5 +1,6 @@
 using AutomationExercise.NUnit.Models;
 using AutomationExercise.NUnit.Utils;
+using Microsoft.Playwright;
 
 namespace AutomationExercise.NUnit;
 
@@ -8,11 +9,16 @@ namespace AutomationExercise.NUnit;
 public class Tests : PageTest
 {
     private HomePage homePage;
+    private SignupPage signupPage;
+    private AccountCreatedPage accountCreatedPage;
 
     [SetUp]
     public async Task BeforeAll()
     {
-        homePage = new HomePage(await Browser.NewPageAsync());
+        IPage page = await Browser.NewPageAsync();
+        homePage = new HomePage(page);
+        signupPage = new SignupPage(page);
+        accountCreatedPage = new AccountCreatedPage(page);
     }
 
     [Test, TestCaseSource(typeof(UserDataSource))]
@@ -30,8 +36,8 @@ public class Tests : PageTest
     )
     {
         await homePage.GoToAsync();
-        await homePage.SignupUserWithEmail(name, email);
-        await homePage.EnterAccountInformation(
+        await signupPage.SignupUserWithEmail(name, email);
+        await signupPage.EnterAccountInformation(
             isMale,
             password,
             birthDay,
@@ -42,8 +48,9 @@ public class Tests : PageTest
             address
         );
 
-        await homePage.continueButton.ClickAsync();
+        await Expect(accountCreatedPage.accountCreatedMessage).ToHaveTextAsync("Account Created!");
 
-        await homePage.deleteAccountButton.ClickAsync(new() { Timeout = 12000 });
+        await accountCreatedPage.ClickContinue();
+        await homePage.DeleteAccount();
     }
 }
