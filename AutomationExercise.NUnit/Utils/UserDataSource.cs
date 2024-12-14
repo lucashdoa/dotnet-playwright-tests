@@ -13,8 +13,7 @@ public class UserDataSource : IEnumerable
 
         foreach (var user in users)
         {
-            yield return new object[]
-            {
+            yield return new User(
                 user.name,
                 user.email,
                 user.isMale,
@@ -25,13 +24,37 @@ public class UserDataSource : IEnumerable
                 user.isSubscribedNewsletter,
                 user.isSubscribedSpecialOffers,
                 user.address
-            };
+            );
         }
     }
 }
 
 public class User
 {
+    public User(
+        string name,
+        string email,
+        bool isMale,
+        string password,
+        string birthDay,
+        string birthMonth,
+        string birthYear,
+        bool isSubscribedNewsletter,
+        bool isSubscribedSpecialOffers,
+        Address address
+    )
+    {
+        this.name = name;
+        this.email = email;
+        this.isMale = isMale;
+        this.password = password;
+        this.birthDay = birthDay;
+        this.birthMonth = birthMonth;
+        this.birthYear = birthYear;
+        this.isSubscribedNewsletter = isSubscribedNewsletter;
+        this.isSubscribedSpecialOffers = isSubscribedSpecialOffers;
+        this.address = address;
+    }
     public string name { get; set; }
     public string email { get; set; }
     public bool isMale { get; set; }

@@ -11,5 +11,5 @@ dotnet test
 To run the tests in headed mode with Playwright debugger:
 
 ``` bash
-dotnet run --settings:debug.runsettings
+dotnet test --settings:debug.runsettings
 ```
