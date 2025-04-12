@@ -37,5 +37,17 @@ public class ExampleTest : PageTest
 
         // Expects page to have a heading with the name of Installation.
         await Expect(Page.GetByRole(AriaRole.Heading, new() { Name = "Installation" })).ToBeVisibleAsync();
-    } 
+    }
+
+    [Test]
+    public async Task Assertions()
+    {
+        await Page.GotoAsync("https://commitquality.com");
+
+        await Expect(Page).ToHaveTitleAsync(new Regex("CommitQuality"), new PageAssertionsToHaveTitleOptions { Timeout = 2000});
+
+        var firstRowName = Page.GetByTestId("name").First;
+
+        await Expect(firstRowName).ToHaveTextAsync("Product 2", new LocatorAssertionsToHaveTextOptions { Timeout = 2000});
+    }
 }

@@ -18,7 +18,7 @@
     <ExpectTimeout>5000</ExpectTimeout>
     <LaunchOptions>
       <Headless>false</Headless>
-      <Channel>msedge</Channel>
+      <Channel>chrome</Channel>
     </LaunchOptions>
   </Playwright>
   <TestRunParameters>
